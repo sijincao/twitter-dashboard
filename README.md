@@ -35,6 +35,8 @@ $ npm install
 $ gulp
 ```
 
+Project will be running on <http://localhost:3000>
+
 ## Unit testing
 
 ```sh
