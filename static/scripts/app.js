@@ -16,5 +16,4 @@ angular
                 templateUrl: 'views/dashboard.html',
                 controller: 'DashboardController as ctrl'
             })
-
     });

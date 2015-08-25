@@ -51,7 +51,6 @@ describe('SideNav Controller Test', function() {
             $scope: scope,
             layoutConfig: layoutConfig
         });
-        // duplicates in order, should not save to configuration
         scope.order = {
             AppDirect: 1,
             laughingsquid: 2,
