@@ -17,7 +17,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('install', function(cb) {
-    var bower = spawn('bower', ['update', '--config.interactive=false'], {stdio: 'inherit'});
+    var bower = spawn('bower', ['update', '--config.interactive=false', '--quiet'], {stdio: 'inherit'});
 
     bower.on('exit', cb);
 });
