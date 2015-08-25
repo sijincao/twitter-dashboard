@@ -1,0 +1,70 @@
+<md-sidenav md-component-id="settings" class="md-sidenav-left md-whiteframe-z2" flex>
+    <md-toolbar class="md-primary md-hue-3" style="text-align: center">
+        <span class="settings-title">App Settings</span>
+    </md-toolbar>
+    <md-content>
+        <!--<md-button class="md-raised">Button</md-button>-->
+        <md-list class="settings-list">
+            <h3>Column Order</h3>
+            <md-list-item layout="column">
+                <div>
+                    <span class="md-body-1">@App Direct</span>
+                </div>
+                <div class="slider-container" layout="row">
+                    <md-slider flex min="1" max="3" ng-model="order['AppDirect']" id="app-order" class="md-accent"></md-slider>
+                    <input flex="20" type="text" ng-model="order['AppDirect']" disabled/>
+                </div>
+
+                <div>
+                    <span class="md-body-1">@laughingsquid</span>
+                </div>
+                <div layout="row" class="slider-container">
+                    <md-slider flex min="1" max="3" ng-model="order['laughingsquid']" id="laugh-order" class="md-primary"></md-slider>
+                    <input  flex="20" type="text" ng-model="order['laughingsquid']" disabled/>
+                </div>
+
+                <div>
+                    <span class="md-body-1">@techcrunch</span>
+                </div>
+                <div layout="row" class="slider-container">
+                    <md-slider flex min="1" max="3" ng-model="order['techcrunch']" id="tech-order" class="md-warn"></md-slider>
+                    <input  flex="20" type="text" ng-model="order['techcrunch']" disabled/>
+                </div>
+                <md-divider></md-divider>
+            </md-list-item>
+            <h3>Tweets Count</h3>
+            <md-list-item class="count-settings" layout="column">
+                <md-input-container layout="row">
+                    <label flex="50">App Direct</label>
+                    <md-select ng-model="config.count.AppDirect">
+                        <md-option value="10">10</md-option>
+                        <md-option value="20">20</md-option>
+                        <md-option value="30">30</md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container layout="row">
+                    <label flex="50">laughingsquid</label>
+                    <md-select ng-model="config.count.laughingsquid">
+                        <md-option value="10">10</md-option>
+                        <md-option value="20">20</md-option>
+                        <md-option value="30">30</md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container layout="row">
+                    <label flex="50">techcrunch</label>
+                    <md-select ng-model="config.count.techcrunch">
+                        <md-option value="10">10</md-option>
+                        <md-option value="20">20</md-option>
+                        <md-option value="30">30</md-option>
+                    </md-select>
+                </md-input-container>
+                <md-divider></md-divider>
+            </md-list-item>
+        </md-list>
+        <div layout="row" layout-padding>
+            <md-button flex class="md-primary md-raised" ng-click="save()">Save</md-button>
+            <span flex></span>
+            <md-button flex class="md-warn md-raised" ng-click="cancel()">cancel</md-button>
+        </div>
+    </md-content>
+</md-sidenav>

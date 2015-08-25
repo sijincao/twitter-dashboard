@@ -1,0 +1,43 @@
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleSettings()">
+            <md-icon md-svg-icon="menu"></md-icon>
+        </md-button>
+        <!-- fill up the space between left and right area -->
+        <span flex></span>
+        <md-icon md-svg-icon="twitter"></md-icon>
+        <span class="app-title">Twitter Dashboard</span>
+    </div>
+</md-toolbar>
+<div class="overlay" layout="row" layout-align="center center" ng-if="isLoading">
+    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</div>
+<div ng-include="'views/templates/sidenav.html'" layout="vertical" ng-controller="SideNavController as ctrl"></div>
+<div id="tweets-container" layout-gt-sm="row" layout-sm="column" layout-margin layout-padding layout-fill>
+    <div layout="column" flex="32">
+        <md-list>
+            <md-list-item ng-repeat="tweet in first_column_tweets">
+                <tweet-widget id = "tweet.id_str"></tweet-widget>
+            </md-list-item>
+        </md-list>
+    </div>
+
+    <div layout="column" flex="32">
+        <md-list>
+            <md-list-item ng-repeat="tweet in second_column_tweets">
+                <tweet-widget id = "tweet.id_str"></tweet-widget>
+            </md-list-item>
+        </md-list>
+    </div>
+
+    <div layout="column" flex="32">
+        <md-list>
+            <md-list-item ng-repeat="tweet in third_column_tweets">
+                <tweet-widget id = "tweet.id_str"></tweet-widget>
+            </md-list-item>
+        </md-list>
+    </div>
+</div>
+
+
+
